@@ -1,14 +1,15 @@
 import { useEffect, useRef, useState } from "react";
 import DefinedRangeCalender from "../calender/DefinedRangeCalender";
 import BulkActions from "../utils/dropdowns/BulkActions";
-import BulkMultipleActions from "../utils/dropdowns/BulkMultipleActions";
-import CategoryList from "../utils/dropdowns/CategoryList";
+import EmployeeLength from "../utils/dropdowns/EmployeeLength";
 import EmployeeOptions from "../utils/dropdowns/EmployeeOptions";
-import OrderDropdown from "../utils/dropdowns/OrderDropdown";
-import PriorityOptions from "../utils/dropdowns/PriorityOptions";
-import ProductStock from "../utils/dropdowns/ProductStock";
-import ProductType from "../utils/dropdowns/ProductType";
 import StatusOptions from "../utils/dropdowns/StatusOptions";
+import PriorityOptions from "../utils/dropdowns/PriorityOptions";
+import CategoryList from "../utils/dropdowns/CategoryList";
+import ProductType from "../utils/dropdowns/ProductType";
+import ProductStock from "../utils/dropdowns/ProductStock";
+import BulkMultipleActions from "../utils/dropdowns/BulkMultipleActions";
+import OrderDropdown from "../utils/dropdowns/OrderDropdown";
 
 type Props = {
   showPriority?: boolean;
@@ -189,7 +190,7 @@ const TableFilter2 = ({
         <div className="col-12 col-lg-3 col-xl-2 d-flex justify-content-end">
           <div id="employeeTableLength">
             <label className="d-flex align-items-center gap-2">
-              {/* <EmployeeLength /> */}
+              <EmployeeLength />
             </label>
           </div>
         </div>

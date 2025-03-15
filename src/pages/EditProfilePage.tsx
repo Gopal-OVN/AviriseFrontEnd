@@ -1,8 +1,7 @@
 import { useState } from "react";
-import ChangePasswordForm from "../../components/forms/ChangePasswordForm";
-import EditProfileForm from "../../components/forms/EditProfileForm";
-import ProfileOtherSettings from "../../components/profile/ProfileOtherSettings";
-import { Link } from "react-router-dom";
+import ChangePasswordForm from "../components/forms/ChangePasswordForm";
+import EditProfileForm from "../components/forms/EditProfileForm";
+import ProfileOtherSettings from "../components/profile/ProfileOtherSettings";
 
 const EditProfilePage = () => {
   const [activeTab, setActiveTab] = useState<string>("edit");
@@ -14,12 +13,6 @@ const EditProfilePage = () => {
       <div className="col-12">
         <div className="dashboard-breadcrumb">
           <h6 className="mb-0">Edit Profile</h6>
-
-          {/* <div className="btn-box"> */}
-          <Link to="/view-profile" className=" btn-primary">
-            View
-          </Link>
-          {/* </div> */}
         </div>
       </div>
 
@@ -50,7 +43,7 @@ const EditProfilePage = () => {
                 >
                   Change Password
                 </button>
-                {/* <button
+                <button
                   className={`btn btn-sm btn-outline-primary ${
                     activeTab === "other" ? "active" : ""
                   }`}
@@ -58,7 +51,7 @@ const EditProfilePage = () => {
                   onClick={() => toggleTab("other")}
                 >
                   Other Settings
-                </button> */}
+                </button>
               </div>
             </nav>
           </div>

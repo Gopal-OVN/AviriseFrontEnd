@@ -5,27 +5,15 @@ const AuthTopLogo = () => {
   const darkMode = useAppSelector((state) => state.theme.isDark);
   return (
     <>
-      <div className="logo" style={{ textAlign: "center" }}>
-        <a
-          href="#"
-          style={{ display: "inline-block", width: "150px", height: "auto" }}
-        >
+      <div className="logo">
+        <a href="#">
           {darkMode ? (
-            <img
-              src="https://avirise.com/wp-content/uploads/2024/12/Avirise-Logo-1.png"
-              alt="logo"
-              style={{ width: "100%", height: "auto" }}
-            />
+            <img src="/img/core-img/logo.png" alt="logo" />
           ) : (
-            <img
-              src="https://avirise.com/wp-content/uploads/2024/12/Avirise-Logo-1.png"
-              alt="logo"
-              style={{ width: "100%", height: "auto" }}
-            />
+            <img src="/img/core-img/logo-white.png" alt="logo" />
           )}
         </a>
       </div>
-
       <Link to="/">
         <i className="fa-duotone fa-house-chimney"></i>
       </Link>

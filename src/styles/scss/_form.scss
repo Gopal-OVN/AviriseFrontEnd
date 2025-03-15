@@ -145,8 +145,8 @@ div.dt-container.dt-empty-footer tbody>tr:last-child>* {
 .form-select,
 .form-control {
   font-size: 14px;
-  color: #282829;
-  border-color: #222323;
+  color: $text;
+  border-color: $border;
   height: 40px;
 
   &.form-control-sm {
@@ -164,9 +164,9 @@ div.dt-container.dt-empty-footer tbody>tr:last-child>* {
   }
 }
 
-// textarea.form-control {
-//   min-height: 60px;
-// }
+textarea.form-control {
+  min-height: 120px;
+}
 
 .form-select::-webkit-input-placeholder,
 .form-control::-webkit-input-placeholder,

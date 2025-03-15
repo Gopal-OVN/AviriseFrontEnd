@@ -31,8 +31,7 @@ const NavigationSection = () => {
           </button>
           <ul className="dropdown">
             <li>
-              {/* <Link to="/">Courier System </Link> */}
-              <Link to="/">Logistic Management </Link>
+              <Link to="/">Courier System</Link>
             </li>
             <li>
               <Link to="/delivery">Delivery</Link>

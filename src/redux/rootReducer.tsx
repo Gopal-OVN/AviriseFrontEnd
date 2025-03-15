@@ -7,8 +7,6 @@ import sidebarBgReducer from "./features/sidebarBgSlice";
 import mainBgReducer from "./features/mainBgSlice";
 import addTaskModalReducer from "./features/addTaskModalSlice";
 import editTaskModalReducer from "./features/editTaskModalSlice";
-import editAddressModalReducer from "./features/editAddressModalSlice";
-
 import viewTaskModalReducer from "./features/viewTaskModalSlice";
 import composeMailModalReducer from "./features/composeMailModalSlice";
 import expandMailModalReducer from "./features/expandMailModalSlice";
@@ -24,8 +22,6 @@ const rootReducer = combineReducers({
   mainBg: mainBgReducer,
   addTaskModal: addTaskModalReducer,
   editTaskModal: editTaskModalReducer,
-  editAddressModal: editAddressModalReducer,
-
   viewTaskModal: viewTaskModalReducer,
   composeMailModal: composeMailModalReducer,
   expandMailModal: expandMailModalReducer,

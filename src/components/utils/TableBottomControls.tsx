@@ -12,7 +12,7 @@ type Props<T> = {
 const TableBottomControls = <T,>({
   indexOfFirstData,
   indexOfLastData,
-  // dataList,
+  dataList,
   currentPage,
   paginate,
   pageNumbers,
@@ -24,8 +24,10 @@ const TableBottomControls = <T,>({
       {!hideInfo && (
         <div className="dataTables_info">
           Showing {indexOfFirstData + 1} to{" "}
-          {indexOfLastData > totalPages ? totalPages : indexOfLastData} of{" "}
-          {totalPages}
+          {indexOfLastData > dataList.length
+            ? dataList.length
+            : indexOfLastData}{" "}
+          of {dataList.length}
         </div>
       )}
       <div className="dataTables_paginate paging_simple_numbers">

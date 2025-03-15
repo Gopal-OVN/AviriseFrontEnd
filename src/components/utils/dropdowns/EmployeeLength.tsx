@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import Select from "react-select";
 import { Option } from "../../../types";
 import { useAppSelector } from "../../../redux/hooks";
@@ -10,19 +10,9 @@ const employeeLengthOptions: Option[] = [
   { value: "100", label: "100" },
 ];
 
-type Props = {
-  onPageSizeChange: (size: number) => void;
-};
-
-const EmployeeLength = ({ onPageSizeChange }: Props) => {
+const EmployeeLength = () => {
   const [employeeLength, setEmployeeLength] = useState<Option | null>(null);
   const darkMode = useAppSelector((state) => state.theme.isDark);
-
-  useEffect(() => {
-    if (employeeLength) {
-      onPageSizeChange(Number(employeeLength.value));
-    }
-  }, [employeeLength, onPageSizeChange]);
 
   return (
     <label htmlFor="length" id="employee_length">
@@ -48,5 +38,4 @@ const EmployeeLength = ({ onPageSizeChange }: Props) => {
     </label>
   );
 };
-
 export default EmployeeLength;

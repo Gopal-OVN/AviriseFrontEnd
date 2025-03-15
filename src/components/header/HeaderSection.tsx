@@ -1,13 +1,9 @@
 import { useEffect, useRef, useState } from "react";
-import { Link } from "react-router-dom";
-import { sidebarAtom } from "../../redux/jotaiStore/sidebarnameAtom";
-import { useAtom } from "jotai";
 type Props = {
   toggleSidebarOpen: () => void;
 };
 const HeaderSection = ({ toggleSidebarOpen }: Props) => {
   const [activeDropdown, setActiveDropdown] = useState<string>("");
-  const [isSidebarVisible, setIsSidebarVisible] = useAtom(sidebarAtom);
 
   const dropdownRef = useRef<HTMLUListElement>(null);
 
@@ -38,29 +34,19 @@ const HeaderSection = ({ toggleSidebarOpen }: Props) => {
       id="stickyHeader"
     >
       <div className="left-side-content-area d-flex align-items-center">
-        {/* Mobile - Visible on small screens */}
         <div
           className="mobile-menu-icon d-md-none"
+          id="mobileMenuIcon"
           role="button"
           onClick={toggleSidebarOpen}
         >
           <i className="ti ti-menu-deep"></i>
         </div>
 
-        {/* Desktop - Visible on medium and larger screens */}
-        <div
-          className="mobile-menu-icon d-none d-md-block "
-          role="button"
-          onClick={() => setIsSidebarVisible(!isSidebarVisible)}
-        >
-          <i className="ti ti-menu-deep"></i>
-        </div>
-
-        <div className="top-bar-text d-none d-md-block ms-4">
+        <div className="top-bar-text d-none d-lg-block">
           <h4 className="mb-1 text-white">Dashboard</h4>
-          <p className="mb-0 text-white  opacity-75">
-            {/* Home - Courier System */}
-            Home - Logistic System
+          <p className="mb-0 text-white text-uppercase opacity-75">
+            Home - Courier System
           </p>
         </div>
       </div>
@@ -72,14 +58,14 @@ const HeaderSection = ({ toggleSidebarOpen }: Props) => {
         >
           <div className="top-search-bar">
             <form action="#" method="get">
-              {/* <input
+              <input
                 className="from-control top-search mb-0"
                 name="search"
                 placeholder="Search"
                 type="search"
                 onFocus={() => toggleDropdown("")}
-              /> */}
-              {/* <button className="" type="submit">
+              />
+              <button className="" type="submit">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="14"
@@ -103,7 +89,7 @@ const HeaderSection = ({ toggleSidebarOpen }: Props) => {
                     strokeLinecap="round"
                   />
                 </svg>
-              </button> */}
+              </button>
             </form>
           </div>
 
@@ -269,15 +255,15 @@ const HeaderSection = ({ toggleSidebarOpen }: Props) => {
                 <a className="dropdown-item" href="#">
                   <i className="ti ti-user"></i> My profile
                 </a>
-                {/* <a className="dropdown-item" href="#">
+                <a className="dropdown-item" href="#">
                   <i className="ti ti-settings"></i> Account settings
                 </a>
                 <a className="dropdown-item" href="#">
                   <i className="ti ti-heart"></i> Support
-                </a> */}
-                <Link className="dropdown-item" to="/auth/login">
+                </a>
+                <a className="dropdown-item" href="#">
                   <i className="ti ti-lock"></i> Logout
-                </Link>
+                </a>
               </div>
             </div>
           </li>

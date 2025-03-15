@@ -2,13 +2,11 @@ type Props = {
   show: boolean;
   handleClose: () => void;
   handleDelete: () => void;
-  loading?: boolean;
 };
 const DeleteConfirmationModal = ({
   show,
   handleClose,
   handleDelete,
-  loading,
 }: Props) => {
   return (
     <>
@@ -23,23 +21,15 @@ const DeleteConfirmationModal = ({
         </div>
         <div className="delete-event-modal-body">
           <p className="delete-confirmation">
-            Are you sure you want to delete ?
+            Are you sure you want to delete the event?
           </p>
         </div>
         <div className="delete-event-modal-footer">
           <button className="btn btn-sm btn-light me-2" onClick={handleClose}>
             Cancel
           </button>
-          <button
-            className="btn btn-sm btn-danger"
-            onClick={handleDelete}
-            disabled={loading}
-          >
-            {loading ? (
-              <span className="spinner-border spinner-border-sm"></span> // Loader
-            ) : (
-              "Delete"
-            )}
+          <button className="btn btn-sm btn-danger" onClick={handleDelete}>
+            Delete
           </button>
         </div>
       </div>

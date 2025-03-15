@@ -20,7 +20,6 @@ const OrderStatus = () => {
       onChange={(selectedOption) => setBulkAction(selectedOption as Option)}
       placeholder="Pending"
       className="ar-select"
-      isClearable={true}
       styles={{
         control: (baseStyles) => ({
           ...baseStyles,

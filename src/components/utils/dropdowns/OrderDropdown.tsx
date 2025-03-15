@@ -22,7 +22,6 @@ const OrderDropdown = () => {
       className="ar-select"
       onChange={(selectedOption) => setStatus(selectedOption as Option)}
       placeholder="All Orders"
-      isClearable={true}
       styles={{
         control: (baseStyles) => ({
           ...baseStyles,

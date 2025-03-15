@@ -1,6 +1,6 @@
 .home-courier {
     .top-header-area {
-        background-color: #004473;
+        background-color: #444392;
     }
 
     .logistic-main-content {
@@ -33,7 +33,7 @@
     &.bg-detected {
         .top-header-area {
             &.header-sticky {
-                background-color: #004473;
+                background-color: #444392;
             }
         }
     }
@@ -78,17 +78,15 @@
     .delivery-dashboard-header {
         margin-top: 1rem;
         margin-bottom: 0;
-        background: #004473;
+        background: #444392;
         padding: 44px;
     }
 
     .logistics-tab .nav-item .nav-link {
-        // background: #515382;
-        background: #004473;
+        background: #515382;
 
         &.active {
-            // background: #1B84FF;
-            background: #EC2125;;
+            background: #1B84FF;
         }
     }
 

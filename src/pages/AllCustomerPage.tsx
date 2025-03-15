@@ -1,10 +1,10 @@
-import { OverlayScrollbarsComponent } from "overlayscrollbars-react";
 import { useState } from "react";
-import TableFilter from "../components/filter/TableFilter";
+import TableFilter2 from "../components/filter/TableFilter2";
 import TableHeader from "../components/header/table-header/TableHeader";
+import { allCustomerData, allCustomerHeaderData } from "../data";
 import AllCustomerTable from "../components/table/AllCustomerTable";
 import TableBottomControls from "../components/utils/TableBottomControls";
-import { allCustomerData, allCustomerHeaderData } from "../data";
+import { OverlayScrollbarsComponent } from "overlayscrollbars-react";
 
 const AllCustomerPage = () => {
   const [currentPage, setCurrentPage] = useState(1);
@@ -33,15 +33,15 @@ const AllCustomerPage = () => {
           />
 
           <div className="panel-body">
-            {/* <div className="product-table-quantity d-flex justify-content-between align-items-center mb-4"> */}
-            {/* <ul className="mb-0">
+            <div className="product-table-quantity d-flex justify-content-between align-items-center mb-4">
+              <ul className="mb-0">
                 <li className="text-white">All (23)</li>
                 <li>Pending (19)</li>
                 <li>Draft (05)</li>
                 <li>Trush (05)</li>
-              </ul> */}
+              </ul>
 
-            {/* <div className="btn-box d-md-flex d-none gap-2">
+              <div className="btn-box d-md-flex d-none gap-2">
                 <button
                   className="btn btn-sm btn-icon btn-light"
                   id="downloadExcel"
@@ -54,11 +54,10 @@ const AllCustomerPage = () => {
                 >
                   <i className="ti ti-file-type-pdf"></i>
                 </button>
-              </div> */}
-            {/* </div> */}
+              </div>
+            </div>
 
-            {/* <TableFilter2 showDatePicker showStatus /> */}
-            <TableFilter />
+            <TableFilter2 showDatePicker showStatus />
 
             <div className="table-responsive">
               <OverlayScrollbarsComponent>

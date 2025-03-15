@@ -2,8 +2,6 @@ import { Link } from "react-router-dom";
 import SideMenuNavSection from "../navigation/SideMenuNavSection";
 import { useAppSelector } from "../../redux/hooks";
 import { MutableRefObject } from "react";
-import { sidebarAtom } from "../../redux/jotaiStore/sidebarnameAtom";
-import { useAtom } from "jotai";
 type Props = {
   logoutBtn?: boolean;
   customLogo?: string;
@@ -20,8 +18,6 @@ const LeftSidebarSection = ({
 }: Props) => {
   const darkMode = useAppSelector((state) => state.theme.isDark);
   const sidebarBgImage = useAppSelector((state) => state.sidebarBg.sidebarBg);
-  const [isSidebarName] = useAtom(sidebarAtom); // Read-only access
-
   return (
     <div
       className={`webdesh-sidemenu-area ${
@@ -29,7 +25,6 @@ const LeftSidebarSection = ({
       }`}
       id="sideMenuWrapper"
       style={{
-        width: isSidebarName ? "120px" : "210px",
         ...(sidebarBgImage !== "" && {
           backgroundImage: `url(${sidebarBgImage})`,
         }),
@@ -48,8 +43,8 @@ const LeftSidebarSection = ({
                 whiteBg && !darkMode
                   ? "/img/core-img/logo-white.png"
                   : whiteBg && darkMode
-                  ? "https://avirise.com/wp-content/uploads/2024/12/Avirise-Logo-1.png"
-                  : "https://avirise.com/wp-content/uploads/2024/12/Avirise-Logo-1.png"
+                  ? "/img/core-img/logo.png"
+                  : "/img/core-img/logo.png"
               }
               alt="logo"
             />

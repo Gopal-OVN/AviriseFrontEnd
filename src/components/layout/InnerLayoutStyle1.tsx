@@ -4,15 +4,10 @@ import LeftSidebarSection from "../sidebar/LeftSidebarSection";
 import FooterSection from "../footer/FooterSection";
 import { useEffect, useRef, useState } from "react";
 import HeaderSection from "../header/HeaderSection";
-import { useAtom } from "jotai";
-import { sidebarAtom } from "../../redux/jotaiStore/sidebarnameAtom";
 
 const InnerLayoutStyle1 = () => {
   const darkMode = useAppSelector((state) => state.theme.isDark);
   const mainBackgroundImg = useAppSelector((state) => state.mainBg.mainBg);
-
-  const [isSidebarName] = useAtom(sidebarAtom); // Read-only access
-
   // sidebar
   const [sidebarOpen, setSidebarOpen] = useState<boolean>(false);
   const toggleSidebarOpen = () => {
@@ -47,11 +42,7 @@ const InnerLayoutStyle1 = () => {
     >
       <div className="webdesh-page-wrapper">
         <LeftSidebarSection sidebarRef={sidebarRef} />
-        <div
-          className={`webdesh-page-content ${
-            isSidebarName ? "sidebar-open" : ""
-          }`}
-        >
+        <div className="webdesh-page-content">
           <HeaderSection toggleSidebarOpen={toggleSidebarOpen} />
           <div className="main-content-wrap">
             <div className="main-container container-fluid">

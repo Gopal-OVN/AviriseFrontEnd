@@ -18,9 +18,9 @@ const InvoicePage = () => {
                       <img
                         src={
                           darkMode
-                            ? "https://avirise.com/wp-content/uploads/2024/12/Avirise-Logo-1.png"
-                            : "https://avirise.com/wp-content/uploads/2024/12/Avirise-Logo-1.png"
-                        } width={200}
+                            ? "/img/core-img/logo.png"
+                            : "/img/core-img/logo-white.png"
+                        }
                         alt="Logo"
                       />
                     </div>

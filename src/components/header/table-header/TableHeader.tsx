@@ -1,4 +1,4 @@
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import { TableHeaderDataType } from "../../../types";
 import { useAppDispatch } from "../../../redux/hooks";
 import { toggleAddTaskModalOpen } from "../../../redux/features/addTaskModalSlice";
@@ -6,48 +6,33 @@ import { Link } from "react-router-dom";
 type Props = {
   tableHeaderData: TableHeaderDataType[];
   tableHeading: string;
-  buttonHeading?: string;
   showAddBtn?: boolean;
   showAddLink?: boolean;
-  link?: string;
-  showDownload?: string;
-  showBranch?: boolean;
-  showCompany?: boolean;
-
 };
 const TableHeader = ({
   tableHeaderData,
-  buttonHeading,
   tableHeading,
   showAddBtn,
   showAddLink,
-  showBranch,
-  showCompany,
-  showDownload,
-  link,
-
 }: Props) => {
   const dispatch = useAppDispatch();
   const openAddModal = () => {
     dispatch(toggleAddTaskModalOpen());
   };
   // Table Filter Header
-  // const [filterDropdown, setFilterDropdown] = useState<boolean>(false);
+  const [filterDropdown, setFilterDropdown] = useState<boolean>(false);
   const headerFilterRef = useRef<HTMLDivElement>(null);
 
-  const permissions = localStorage.getItem("permissions") || "[]";  //permission authentication
-
-  console.log("tableHeaderData", tableHeaderData);
-  // const toggleFilterDropdown = () => {
-  //   setFilterDropdown((prevState) => !prevState);
-  // };
+  const toggleFilterDropdown = () => {
+    setFilterDropdown((prevState) => !prevState);
+  };
 
   const handleHeaderFilterClickOutside = (event: MouseEvent) => {
     if (
       headerFilterRef.current &&
       !headerFilterRef.current.contains(event.target as Node)
     ) {
-      // setFilterDropdown(false);
+      setFilterDropdown(false);
     }
   };
 
@@ -57,63 +42,81 @@ const TableHeader = ({
       document.removeEventListener("mousedown", handleHeaderFilterClickOutside);
     };
   }, []);
-
-  console.log("showCompany:", showCompany);
-  console.log("showBranch:", showBranch);
-
   return (
     <div className="panel-header">
-      <h6>{tableHeading}</h6>
+      <h5>{tableHeading}</h5>
 
       <div className="btn-box d-flex gap-2">
-        <div className="tableSearch" id="tableSearch"></div>
+        <div className="tableSearch" id="tableSearch">
+          <label>
+            <input
+              type="search"
+              className="form-control"
+              placeholder="Search..."
+              aria-controls="targetAudienceTable"
+            />
+          </label>
+        </div>
 
-        {showCompany && permissions.includes("Create") && (
-          <div className="btn-box">
-            <Link className="btn  btn-sm btn-primary" to={"/add-company"}>
-              <i className="fa-light fa-plus me-2 "></i>{" "}
-              <span>Add Company</span>
-            </Link>
-          </div>
-        )}
+        <button className="btn btn-sm btn-icon btn-primary">
+          <i className="fa-light fa-arrows-rotate"></i>
+        </button>
 
-        {showBranch && permissions.includes("Create") && (
-          <div className="btn-box">
-            <Link className="btn  btn-sm btn-primary" to={"/add-branch"}>
-              <i className="fa-light fa-plus me-2 "></i> <span>Add Branch</span>
-            </Link>
-          </div>
-        )}
-        {showAddBtn && permissions.includes("Create") && (
+        <div className="digi-dropdown dropdown dropstart" ref={headerFilterRef}>
+          <button
+            className="btn btn-sm btn-icon btn-primary"
+            onClick={toggleFilterDropdown}
+          >
+            <i className="fa-regular fa-ellipsis-vertical"></i>
+          </button>
+
+          <ul
+            className={`digi-dropdown-menu dropdown-menu ${
+              filterDropdown ? "show" : ""
+            }`}
+          >
+            <li className="dropdown-title">Show Table Title</li>
+            {tableHeaderData.map((item) => (
+              <li key={item.id}>
+                <div className="form-check">
+                  <input
+                    className="form-check-input"
+                    type="checkbox"
+                    id={item.inputId}
+                  />
+                  <label className="form-check-label" htmlFor={item.inputId}>
+                    {item.label}
+                  </label>
+                </div>
+              </li>
+            ))}
+
+            <li className="dropdown-title pb-1">Showing</li>
+            <li>
+              <div className="input-group">
+                <input
+                  type="number"
+                  className="form-control w-50"
+                  placeholder="10"
+                />
+                <button className="btn btn-primary w-50">Apply</button>
+              </div>
+            </li>
+          </ul>
+        </div>
+        {showAddBtn && (
           <button
             className="btn btn-icon btn-sm btn-primary"
             onClick={openAddModal}
           >
-            <i className="fa-light fa-plus"> </i>
+            <i className="fa-light fa-plus"></i>
           </button>
         )}
-        {showAddLink && permissions.includes("Create") && (
-          <div className="btn-box">
-            <Link className="btn  btn-sm btn-primary" to={link || ""}>
-              <i className="fa-light fa-plus me-2 "></i>{" "}
-              <span>Add {buttonHeading}</span>
-            </Link>
-          </div>
-        )}
-
-        {showDownload && (
-          <button className="btn btn-sm btn-primary">
-            <i className="fa-light fa-download me-2"></i>
-            <span>Download</span>
-          </button>
-        )}
-
-        {/* <div className="btn-box">
-          <Link className="btn  btn-sm btn-primary" to={link || ""}>
-            <i className="fa-light fa-plus me-2 "></i>{" "}
-            <span>Assign Delivery Agents</span>
+        {showAddLink && (
+          <Link className="btn btn-icon btn-sm btn-primary" to={"/add-product"}>
+            <i className="fa-light fa-plus"></i>
           </Link>
-        </div> */}
+        )}
       </div>
     </div>
   );

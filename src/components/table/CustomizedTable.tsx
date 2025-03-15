@@ -1,6 +1,6 @@
 import BulkActions from "../utils/dropdowns/BulkActions";
 import CategoryList from "../utils/dropdowns/CategoryList";
-import EmployeeLength2 from "../utils/dropdowns/EmployeeLength2";
+import EmployeeLength from "../utils/dropdowns/EmployeeLength";
 import ProductStock from "../utils/dropdowns/ProductStock";
 import ProductType from "../utils/dropdowns/ProductType";
 
@@ -48,7 +48,7 @@ const CustomizedTable = () => {
               <div className="col-xl-3 col-md-4 d-flex justify-content-between align-items-end">
                 <div className="tableSearch" id="tableSearch"></div>
                 <div id="productTableLength">
-                  <EmployeeLength2 />
+                  <EmployeeLength />
                 </div>
               </div>
             </div>

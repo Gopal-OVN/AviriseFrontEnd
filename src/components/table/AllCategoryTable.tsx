@@ -1,10 +1,10 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
 import { categoryData, categoryHeaderData } from "../../data";
 import TableHeader from "../header/table-header/TableHeader";
+import { Link } from "react-router-dom";
 import TableBottomControls from "../utils/TableBottomControls";
 import BulkActions from "../utils/dropdowns/BulkActions";
-// import EmployeeLength from "../utils/dropdowns/EmployeeLength";
+import EmployeeLength from "../utils/dropdowns/EmployeeLength";
 
 const AllCategoryTable = () => {
   const [currentPage, setCurrentPage] = useState(1);
@@ -50,7 +50,7 @@ const AllCategoryTable = () => {
             <div className="col-12 col-sm-4 d-flex justify-content-end">
               <div id="employeeTableLength">
                 <label className="d-flex align-items-center gap-2">
-                  {/* <EmployeeLength /> */}
+                  <EmployeeLength />
                 </label>
               </div>
             </div>

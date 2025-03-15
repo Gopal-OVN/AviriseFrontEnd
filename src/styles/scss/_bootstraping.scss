@@ -25,7 +25,7 @@ div#announcementBody {
 }
 
 div#world-map-sales-markers {
-  height: 210px;
+  height: 260px;
   overflow: hidden;
   margin-top: 0;
   text-align: center;
@@ -41,7 +41,7 @@ div#world-map-sales-markers {
   z-index: 800;
   top: 0;
   left: -340px;
-  width: 210px;
+  width: 260px;
   height: 100%;
   background-color: $white;
   transition-duration: 400ms;
@@ -80,11 +80,10 @@ select {
   z-index: 30;
   top: 0;
   left: -300px;
-  width: 210px;
+  width: 260px;
   height: 80px;
   transition-duration: 400ms;
-  // background: #004473;
-  background: #D3DBE7;
+  background: #444392;
   display: flex;
   align-items: center;
 
@@ -93,7 +92,7 @@ select {
   }
 
   a {
-    padding-left: 20px;
+    padding-left: 30px;
     display: block;
 
     img {
@@ -110,15 +109,11 @@ select {
 
 .webdesh-page-content {
   margin-left: 0;
-  transition: margin-left 400ms ease-in-out;
+  transition-duration: 400ms;
 
   @media #{$breakpoint-md} {
-    margin-left: 210px;
+    margin-left: 260px;
   }
-}
-
-.sidebar-open {
-  margin-left: 120px;
 }
 
 .side-menu-area {
@@ -143,7 +138,7 @@ select {
       display: flex;
       align-items: center;
       width: 100%;
-      padding: 0 0px 0 5px;
+      padding: 0 24px 0 30px;
       font-size: 1rem;
       font-weight: 500;
       text-transform: capitalize;
@@ -181,10 +176,10 @@ select {
       }
 
       i {
-        flex: 0 0 30px;
+        flex: 0 0 50px;
         max-width: 50px;
         width: 50px;
-        font-size: 20px;
+        font-size: 28px;
         transition-duration: 400ms;
         color: #737B8B;
       }
@@ -202,7 +197,7 @@ select {
     }
 
     .treeview-menu {
-      margin-left: 1px;
+      margin-left: 40px;
       height: 0;
       opacity: 0;
       visibility: hidden;
@@ -217,7 +212,6 @@ select {
 
       li {
         a {
-          display: block;
           font-size: 14px;
           color: $text;
           margin-left: 0;
@@ -225,7 +219,7 @@ select {
           position: relative;
           z-index: 1;
           height: 32px;
-          // padding-left: 1rem;
+          padding-left: 1rem;
           transition-duration: 400ms;
 
           &:hover {
@@ -344,8 +338,8 @@ select {
 
   @media #{$breakpoint-md} {
     padding: 0 1.5rem;
-    left: 210px;
-    width: calc(100% - 210px);
+    left: 260px;
+    width: calc(100% - 260px);
   }
 }
 
@@ -374,7 +368,7 @@ select {
 
   &:hover,
   &:focus {
-    color: #004473;
+    color: #444392;
   }
 }
 
@@ -518,7 +512,7 @@ select {
 }
 
 .notifications-box .nav-link:hover {
-  color: #004473;
+  color: #444392;
 }
 
 .notifications-box .dropdown-item>i,
@@ -587,14 +581,14 @@ select {
     padding-bottom: 0.5rem;
 
     i {
-      color: #004473;
+      color: #444392;
       margin-right: 5px;
       font-size: 1.25rem;
     }
 
     &:hover,
     &:focus {
-      color: #004473;
+      color: #444392;
     }
   }
 }
@@ -654,7 +648,7 @@ select {
     }
 
     a {
-      color: #004473;
+      color: #444392;
     }
   }
 }
@@ -818,30 +812,6 @@ select.form-control {
   padding-right: 28px;
 }
 
-.react-select__control {
-
-  font-size: 14px;
-  color: #737B8B !important;
-  border-color: #dbeaea !important;
-  height: 40px;
-}
-
-.react-select__option--is-selected:hover {
-  background-color: #007bff !important;
-  color: white !important;
-}
-
-
-
-.react-select__option--is-selected {
-  background-color: white !important;
-  color: #737B8B !important;
-}
-
-.react-select__option {
-  font-size: 14px !important;
-}
-
 .form-check label {
   @include xxs {
     font-size: 12px !important;
@@ -981,11 +951,11 @@ button.main-content-bg-btn img {
 
 .btn-primary {
   color: #ffffff;
-  background-color: #004473;
+  background-color: #444392;
   padding: 0 1rem;
 }
 
 .form-check-input:checked {
-  background-color: #004473;
-  border-color: #004473;
+  background-color: #444392;
+  border-color: #444392;
 }

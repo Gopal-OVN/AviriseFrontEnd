@@ -317,9 +317,9 @@ label {
   user-select: none;
 }
 
-// .mb-25 {
-//   margin-bottom: 25px;
-// }
+.mb-25 {
+  margin-bottom: 25px;
+}
 
 .mb-4 {
   margin-bottom: 20px;
@@ -508,8 +508,7 @@ pre .punctuation {
 }
 
 .form-label {
-  // color: $text;
-  color: black;
+  color: $text;
   display: block;
   font-size: 14px;
   margin-bottom: .5rem;

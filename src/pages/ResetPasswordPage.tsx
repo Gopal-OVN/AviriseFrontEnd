@@ -1,47 +1,9 @@
-import { Link, useSearchParams } from "react-router-dom";
+import { Link } from "react-router-dom";
 import AuthTopLogo from "../components/auth/AuthTopLogo";
 import { useAppSelector } from "../redux/hooks";
-import { useState } from "react";
-import { toast } from "react-toastify";
-import { resetPasswordAPI } from "../services/auth-service";
-import { useNavigate } from "react-router-dom";
 
 const ResetPasswordPage = () => {
-  const navigate = useNavigate();
-
   const darkMode = useAppSelector((state) => state.theme.isDark);
-  const [new_password, setPassword] = useState<string>("");
-  const [confirmPassword, setConfirmPassword] = useState<string>("");
-  const [searchParams] = useSearchParams();
-
-  const token = searchParams.get("token");
-
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-
-    if (!token) {
-      toast.error("Invalid reset link.");
-      return;
-    }
-    if (new_password !== confirmPassword) {
-      toast.error("Passwords do not match.");
-      return;
-    }
-
-    try {
-      const data = new FormData();
-      data.append("new_password", new_password);
-      data.append("token", token);
-
-      const result = await resetPasswordAPI(data);
-      toast.success(result.message || "Password updated successfully.");
-      navigate("/");
-    } catch (error: any) {
-      console.error("Error object:", error);
-
-      toast.error(error.response.detail);
-    }
-  };
 
   return (
     <main
@@ -54,41 +16,24 @@ const ResetPasswordPage = () => {
           </div>
           <div className="bottom">
             <h3 className="panel-title">Reset Password</h3>
-            <form onSubmit={handleSubmit}>
+            <form>
               <div className="input-group mb-4">
                 <span className="input-group-text">
-                  <i className="fa-solid fa-lock"></i>
+                  <i className="fa-regular fa-envelope"></i>
                 </span>
                 <input
-                  type="password"
+                  type="text"
                   className="form-control"
-                  placeholder="New Password"
-                  value={new_password}
-                  onChange={(e) => setPassword(e.target.value)}
+                  placeholder="Username or email address"
                 />
               </div>
-
-              {/* Confirm Password Input */}
-              <div className="input-group mb-4">
-                <span className="input-group-text">
-                  <i className="fa-solid fa-lock"></i>
-                </span>
-                <input
-                  type="password"
-                  className="form-control"
-                  placeholder="Confirm Password"
-                  value={confirmPassword}
-                  onChange={(e) => setConfirmPassword(e.target.value)}
-                />
-              </div>
-
-              <button type="submit" className="btn btn-primary w-100 login-btn">
-                Update Password
+              <button className="btn btn-primary w-100 login-btn">
+                Get Link
               </button>
             </form>
             <div className="other-option">
               <p className="mb-0">
-                Remember the password? <Link to="/">Login</Link>
+                Remember the password? <Link to="/login">Login</Link>
               </p>
             </div>
           </div>
@@ -97,5 +42,4 @@ const ResetPasswordPage = () => {
     </main>
   );
 };
-
 export default ResetPasswordPage;

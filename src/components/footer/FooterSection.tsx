@@ -7,7 +7,7 @@ const FooterSection = ({ footerStyle }: Props) => {
       <div className="copywrite-text px-4">
         <p>
           Copyright &copy; {new Date().getFullYear()} all rights reserved by{" "}
-          <a href="#">Avirise</a>
+          <a href="#">HubPanel</a>
         </p>
       </div>
     </footer>

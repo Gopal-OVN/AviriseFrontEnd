@@ -19,7 +19,6 @@ const PaymentStatus = () => {
       onChange={(selectedOption) => setBulkAction(selectedOption as Option)}
       placeholder="Paid"
       className="ar-select"
-      isClearable={true}
       styles={{
         control: (baseStyles) => ({
           ...baseStyles,

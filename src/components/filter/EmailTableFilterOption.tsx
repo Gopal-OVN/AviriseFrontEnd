@@ -1,6 +1,6 @@
 import BulkEmailActions from "../utils/dropdowns/BulkEmailActions";
 import EmailStatusActions from "../utils/dropdowns/EmailStatusActions";
-import EmployeeLength2 from "../utils/dropdowns/EmployeeLength2";
+import EmployeeLength from "../utils/dropdowns/EmployeeLength";
 type Props = {
   hideLength?: boolean;
   toggle?: (tab: string) => void;
@@ -101,7 +101,7 @@ const EmailTableFilterOption = ({
           }`}
         >
           <div className="productTableLength">
-            <EmployeeLength2 />
+            <EmployeeLength />
           </div>
         </div>
       </div>

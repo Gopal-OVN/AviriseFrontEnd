@@ -1224,7 +1224,6 @@ td.d-flex {
     .dropdown-item {
       color: $text;
       font-size: 12px;
-
     }
   }
 
@@ -2052,7 +2051,7 @@ td.d-flex {
     display: flex;
     align-items: center;
     justify-content: center;
-    background: #004473;
+    background: #444392;
     margin-right: 12px;
 
     @include md {
@@ -2433,7 +2432,7 @@ ul.custom-nav {
 }
 
 .logistics-tab {
-  margin-top: 10px;
+  margin-top: 40px;
 
   .nav-tabs {
     gap: 5px;
@@ -2455,51 +2454,48 @@ ul.custom-nav {
       color: $white;
       font-size: 12px;
       font-weight: 500;
-@media #{$breakpoint-md} {
-    font-size: 15px;
-    height: 30px;
-    padding: 0 25px;
-    border-radius: 5px;
-    // line-height: 50px;
-  }
 
-  @include lg {
-    font-size: 14px;
-    height: 30px;
-    padding: 0 25px;
-    line-height: 30px;
-    border-radius: 5px;
-  }
+      @media #{$breakpoint-md} {
+        font-size: 15px;
+        height: 50px;
+        padding: 0 30px;
+        line-height: 50px;
+      }
 
-  @include md {
-    font-size: 12px;
-    height: 30px;
-    padding: 0 10px;
-    line-height: 30px;
-    border-radius: 5px;
-  }
+      @include lg {
+        font-size: 14px;
+        height: 45px;
+        padding: 0 25px;
+        line-height: 45px;
+      }
 
-  @include sm {
-    font-size: 13px;
-    height: 30px;
-    padding: 0 14px;
-    line-height: 30px;
-    border-radius: 5px;
-  }
+      @include md {
+        font-size: 12px;
+        height: 36px;
+        padding: 0 10px;
+        line-height: 36px;
+      }
 
-  @include xs {
-    font-size: 12px;
-    height: 35px;
-    padding: 0 10px;
-    line-height: 35px;
-  }
+      @include sm {
+        font-size: 13px;
+        height: 40px;
+        padding: 0 14px;
+        line-height: 40px;
+      }
 
-  @include xxs {
-    font-size: 10px;
-    height: 35px;
-    padding: 0 5px;
-    line-height: 35px;
-  }
+      @include xs {
+        font-size: 12px;
+        height: 35px;
+        padding: 0 10px;
+        line-height: 35px;
+      }
+
+      @include xxs {
+        font-size: 10px;
+        height: 35px;
+        padding: 0 5px;
+        line-height: 35px;
+      }
 
       &.active {
         background: #1B84FF;

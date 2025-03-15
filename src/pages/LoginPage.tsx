@@ -1,6 +1,7 @@
-import AuthTopLogo from "../components/auth/AuthTopLogo";
-import LoginForm from "../components/forms/auth-form/login-form";
+import OtherAuthOptions from "../components/auth/OtherAuthOptions";
+import AuthForm from "../components/forms/AuthForm";
 import { useAppSelector } from "../redux/hooks";
+import AuthTopLogo from "../components/auth/AuthTopLogo";
 
 const LoginPage = () => {
   const darkMode = useAppSelector((state) => state.theme.isDark);
@@ -16,9 +17,8 @@ const LoginPage = () => {
           </div>
           <div className="bottom">
             <h3 className="panel-title">Login</h3>
-            {/* <AuthForm /> */}
-            <LoginForm />
-            {/* <OtherAuthOptions /> */}
+            <AuthForm />
+            <OtherAuthOptions />
           </div>
         </div>
       </div>

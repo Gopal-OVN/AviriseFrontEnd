@@ -1,20 +1,11 @@
-interface PublicInfoSectionProps {
-  name: string;
-  setName: React.Dispatch<React.SetStateAction<string>>;
-  userName: string;
-  setUserName: React.Dispatch<React.SetStateAction<string>>;
-  desc: string;
-  setDesc: React.Dispatch<React.SetStateAction<string>>;
-}
+import { useState } from "react";
 
-const PublicInfoSection: React.FC<PublicInfoSectionProps> = ({
-  name,
-  setName,
-  userName,
-  setUserName,
-  desc,
-  setDesc,
-}) => {
+const PublicInfoSection = () => {
+  const [name, setName] = useState<string>("Mitchell C. Shay");
+  const [userName, setUserName] = useState<string>("@mitchellc");
+  const [desc, setDesc] = useState<string>(
+    "It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets"
+  );
   return (
     <div className="public-information mb-4">
       <div className="row g-4">
@@ -28,7 +19,7 @@ const PublicInfoSection: React.FC<PublicInfoSectionProps> = ({
                 <i className="fa-light fa-camera"></i>
               </button>
             </div>
-            <span className="admin-name">{name}</span>
+            <span className="admin-name">Mitchell C. Shay</span>
             <span className="admin-role">Graphic Designer</span>
           </div>
         </div>
@@ -76,5 +67,4 @@ const PublicInfoSection: React.FC<PublicInfoSectionProps> = ({
     </div>
   );
 };
-
 export default PublicInfoSection;

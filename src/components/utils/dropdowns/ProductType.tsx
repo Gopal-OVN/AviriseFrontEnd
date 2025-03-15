@@ -20,7 +20,6 @@ const ProductType = () => {
       className="ar-select"
       onChange={(selectedOption) => setProductType(selectedOption as Option)}
       placeholder="All Product Type"
-      isClearable={true}
       styles={{
         control: (baseStyles) => ({
           ...baseStyles,

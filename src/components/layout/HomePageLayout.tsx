@@ -9,7 +9,6 @@ import ExpandMailModal from "../modal/ExpandMailModal";
 import UploadFileModal from "../modal/UploadFileModal";
 import CreateFolderModal from "../modal/CreateFolderModal";
 import FileDetailsModal from "../modal/FileDetailsModal";
-import EditAddressModal from "../modal/EditAddressModal";
 
 const HomePageLayout = () => {
   const location = useLocation();
@@ -21,8 +20,6 @@ const HomePageLayout = () => {
       <Outlet />
       {/* Modals */}
       <EditTaskModal />
-      <EditAddressModal />
-
       <AddTaskModal />
       <ViewTaskModal />
       <ComposeEmailModal />
