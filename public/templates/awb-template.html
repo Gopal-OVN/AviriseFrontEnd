@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" /> -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Courier Document</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        font-size: 10px;
+        /* Smaller font size for compact layout */
+      }
+
+      .page {
+        width: 100%;
+        /* A4 width */
+        padding: 5mm;
+        box-sizing: border-box;
+        border: 1px solid #ccc;
+        position: relative;
+        page-break-inside: avoid;
+        /* Ensure each copy stays together */
+      }
+
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-bottom: 5px;
+      }
+
+      table,
+      th,
+      td {
+        border: 1px solid black;
+      }
+
+      th,
+      td {
+        padding: 3px;
+        text-align: left;
+        font-size: 18px;
+        font-size: 22px;
+      }
+
+      th {
+        background-color: #f2f2f2;
+      }
+
+      .header {
+        text-align: center;
+        margin-bottom: 5px;
+      }
+
+      .footer {
+        text-align: center;
+        margin-top: 5px;
+        font-size: 8px;
+        color: #555;
+      }
+
+      . * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      .header-container {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+        padding: 10px 20px;
+        border-bottom: 2px solid #000;
+        /* Optional border */
+      }
+
+      .barcode {
+        font-family: "Libre Barcode 128", cursive;
+        font-size: 22px;
+        text-align: left;
+      }
+
+      .docket-number {
+        font-size: 18px;
+        font-weight: bold;
+        text-align: center;
+      }
+
+      .header {
+        flex: 2;
+        text-align: center;
+      }
+
+      .header h2 {
+        font-size: 24px;
+        font-weight: bold;
+      }
+
+      .header h3 {
+        font-size: 18px;
+        font-weight: normal;
+        margin-top: 5px;
+      }
+
+      .logo img {
+        width: 200px;
+        height: auto;
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- First Copy -->
+    <div class="page">
+      <div class="header-container">
+        <div class="logo">
+          <img src="img/Avirise-Logo-1.webp" alt="Company Logo" />
+        </div>
+        <div class="header">
+          <h2>Avirise Express</h2>
+        </div>
+
+        <div class="barcode">
+          <div class="barcode-container"></div>
+        </div>
+      </div>
+
+      <table>
+        <tr>
+          <th colspan="2">FROM / CONSIGNOR</th>
+          <th colspan="2">TO / CONSIGNEE</th>
+        </tr>
+        <tr>
+          <td>Name:</td>
+          <td>{{sender_name}}</td>
+          <td>Name:</td>
+          <td>{{receiver_name}}</td>
+        </tr>
+        <tr>
+          <td>Address:</td>
+          <td>{{sender_address}}</td>
+          <td>Address:</td>
+          <td>{{receiver_address}}</td>
+        </tr>
+        <tr>
+          <td>Country:</td>
+          <td>India</td>
+          <td>Country:</td>
+          <td>India</td>
+        </tr>
+        <tr>
+          <td>Tel:</td>
+          <td>08137977599</td>
+          <td>Tel:</td>
+          <td>08137977599</td>
+        </tr>
+        <tr>
+          <td>Email:</td>
+          <td>zahidhusnain837@gmail.com</td>
+          <td>Email:</td>
+          <td>zahidhusnain837@gmail.com</td>
+        </tr>
+        <tr>
+          <td colspan="2">
+            Conditions of Carriage by tendering goods for transport by new, the
+            consignor agrees to be bound by new Terms and Conditions.
+          </td>
+          <td colspan="2">Special Service/Delivery Instructions</td>
+        </tr>
+        <tr>
+          <td>Shippers Signature</td>
+          <td></td>
+          <td>Shippers Name</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>Date:</td>
+          <td>{{date}}</td>
+          <td>Pieces:</td>
+          <td>1</td>
+        </tr>
+        <tr>
+          <td>Weight:</td>
+          <td>{{parcel_weight}} Kgs</td>
+          <td>Value: {{e_way_bill}}</td>
+          <td>USD 0</td>
+        </tr>
+        <tr>
+          <td>Ref:</td>
+          <td></td>
+          <td>Dest Code:</td>
+          <td>0</td>
+        </tr>
+        <tr>
+          <td>Full Description of Goods:</td>
+          <td></td>
+          <td>Shipping Cost:</td>
+          <td>{{shipment_value}}</td>
+        </tr>
+      </table>
+    </div>
+
+    <!-- Second Copy -->
+    <div class="page">
+      <div class="header-container">
+        <div class="logo">
+          <img src="img/Avirise-Logo-1.webp" alt="Company Logo" />
+        </div>
+        <div class="header">
+          <h2>Avirise Express</h2>
+        </div>
+
+        <div class="barcode">
+          <div class="barcode-container"></div>
+        </div>
+      </div>
+
+      <table>
+        <tr>
+          <th colspan="2">FROM / CONSIGNOR</th>
+          <th colspan="2">TO / CONSIGNEE</th>
+        </tr>
+        <tr>
+          <td>Name:</td>
+          <td>{{sender_name}}</td>
+          <td>Name:</td>
+          <td>{{receiver_name}}</td>
+        </tr>
+        <tr>
+          <td>Address:</td>
+          <td>{{sender_address}}</td>
+          <td>Address:</td>
+          <td>{{receiver_address}}</td>
+        </tr>
+        <tr>
+          <td>Country:</td>
+          <td>India</td>
+          <td>Country:</td>
+          <td>India</td>
+        </tr>
+        <tr>
+          <td>Tel:</td>
+          <td>08137977599</td>
+          <td>Tel:</td>
+          <td>08137977599</td>
+        </tr>
+        <tr>
+          <td>Email:</td>
+          <td>zahidhusnain837@gmail.com</td>
+          <td>Email:</td>
+          <td>zahidhusnain837@gmail.com</td>
+        </tr>
+        <tr>
+          <td colspan="2">
+            Conditions of Carriage by tendering goods for transport by new, the
+            consignor agrees to be bound by new Terms and Conditions.
+          </td>
+          <td colspan="2">Special Service/Delivery Instructions</td>
+        </tr>
+        <tr>
+          <td>Shippers Signature</td>
+          <td></td>
+          <td>Shippers Name</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>Date:</td>
+          <td>{{date}}</td>
+          <td>Pieces:</td>
+          <td>1</td>
+        </tr>
+        <tr>
+          <td>Weight:</td>
+          <td>{{parcel_weight}} Kgs</td>
+          <td>Value: {{e_way_bill}}</td>
+          <td>USD 0</td>
+        </tr>
+        <tr>
+          <td>Ref:</td>
+          <td></td>
+          <td>Dest Code:</td>
+          <td>0</td>
+        </tr>
+        <tr>
+          <td>Full Description of Goods:</td>
+          <td></td>
+          <td>Shipping Cost:</td>
+          <td>{{shipment_value}}</td>
+        </tr>
+      </table>
+    </div>
+  </body>
+</html>
